@@ -1,0 +1,14 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage
+    xmlns:forms="using:Xamarin.Forms" xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Chattable.LoginPage">
+
+    <Grid BackgroundColor="DarkGray">
+        <StackLayout>
+            <Label Text="User Name" />
+            <Entry Text="{Binding Name}" BackgroundColor="White" VerticalOptions="CenterAndExpand" Completed="OnClicked" />
+            <Button Text="Login" Clicked="OnClicked"/>
+        </StackLayout>
+    </Grid>
+</ContentPage>

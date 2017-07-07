@@ -1,0 +1,35 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage
+     xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:local="using:Chattable"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Chattable.ChatPage">
+
+    <Grid BackgroundColor="DarkGray">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition />
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
+
+
+        <Label Text="Chattable!" FontSize="Large" FontFamily="Impact"
+               Margin="0,20,0,10"
+               VerticalOptions="Center" HorizontalOptions="Center" />
+
+        <ListView Grid.Row="1" ItemsSource="{Binding Messages}" BackgroundColor="White" Margin="10" x:Name="ListView"/>
+
+        <Grid Grid.Row="2" Margin="10">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition />
+                <ColumnDefinition Width="Auto"/>
+            </Grid.ColumnDefinitions>
+
+            <Entry BackgroundColor="White" VerticalOptions="CenterAndExpand"  Grid.Row="0" Grid.Column="0"
+                   Completed="OnClicked"
+                   Text="{Binding Message}" />
+            <Button Grid.Row="0" TextColor="White"  Text="Send" Margin="10" Grid.Column="1" Clicked="OnClicked" />
+        </Grid>
+    </Grid>
+    
+</ContentPage>
