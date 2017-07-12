@@ -60,7 +60,6 @@
 
         public Datawrapper()
         {
-
         }
         public MessageType Type { get; set; }
 

@@ -17,7 +17,6 @@ namespace RemoteShared
         /// </summary>
         private readonly CancellationTokenSource cancel = new CancellationTokenSource();
 
-
         /// <summary>
         /// The reading Task. 
         /// </summary>
@@ -111,17 +110,6 @@ namespace RemoteShared
             // dispose of the client. 
             this.client.Dispose();
             this.client = null;
-        }
-
-        /// <summary>
-        /// Sends a Request to the server
-        /// </summary>
-        /// <param name="message">
-        /// The Request to make. 
-        /// </param>
-        public void Send(Newtonsoft.Json.Linq.JObject message)
-        {
-            base.Send(this.client.Client, message.ToString().ToByteArray());
         }
 
         /// <summary>

@@ -64,21 +64,6 @@ namespace RemoteShared
             this.server.Stop();
         }
 
-        public void NotifyClients(Newtonsoft.Json.Linq.JObject message)
-        {
-            var buffer = message.ToString().ToByteArray();
-
-            foreach (var client in this.clients.Where(x => x.Connected))
-            {
-                this.Send(client.Socket, buffer);
-            }
-        }
-
-        public void NotifyClient(Socket client, Newtonsoft.Json.Linq.JObject message)
-        {
-            this.Send(client, message.ToString().ToByteArray());
-        }
-
         public void NotifyClients(string message)
         {
             var buffer = message.ToByteArray();
